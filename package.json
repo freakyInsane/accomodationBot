@@ -4,9 +4,12 @@
   "description": "Bot for getting the latest apartment rent ads",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node index.js"
   },
+"engines": {
+    "node": "6.0.0"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freakyInsane/accomodationBot.git"
