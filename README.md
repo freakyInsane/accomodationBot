@@ -1,2 +1,1 @@
-# accomodationBot
-bot for searching apartments and sending news via Telegram
+# Skeleton project for Swagger
