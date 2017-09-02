@@ -23,6 +23,7 @@
   "dependencies": {
     "casperjs": "^1.1.4",
     "express": "^4.15.4",
+    "node-telegram-bot-api": "^0.28.0",
     "osmosis": "^1.1.4",
     "spooky": "^0.2.5"
   },
