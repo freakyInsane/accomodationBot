@@ -39,7 +39,8 @@ module.exports = (bot) => {
         if(msgLun == '') {
             msgLun = msg;
         }
-        setInterval(()=>{
+        console.log(msgLun.chat.id);
+/*        setInterval(()=>{
             osmosis
                 .get('www.lun.ua/uk/%D0%BE%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80-%D0%BA%D0%B8%D1%97%D0%B2')
                 .set({
@@ -59,8 +60,8 @@ module.exports = (bot) => {
                 .log(console.log)
                 .error(console.log)
                 .debug(console.log)
-        },5000);
-/*        osmosis
+        },5000);*/
+        osmosis
             .get('www.lun.ua/uk/%D0%BE%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80-%D0%BA%D0%B8%D1%97%D0%B2')
             .set({
                 id: ['.realty-card @data-jss'],
@@ -71,16 +72,16 @@ module.exports = (bot) => {
             })
             .data((data) => {
                 console.log(previousID);
-                if(previousID !== data.id[0] || previousID == '') {
-                    bot.sendMessage(msg.chat.id,lunTemplate(data.price[0],data.region[0], data.address[0], data.link[0]) ,{parse_mode : "HTML"});
+                bot.sendMessage(msg.chat.id,lunTemplate(data.price[0],data.region[0], data.address[0], data.link[0]) ,{parse_mode : "HTML"});
+/*                if(previousID !== data.id[0] || previousID == '') {
                     previousID = data.id[0]
                 } else {
                     bot.sendMessage(msg.chat.id, 'Нету пока еще новых объявлений');
-                }
+                }*/
             })
             .log(console.log)
             .error(console.log)
-            .debug(console.log)*/
+            .debug(console.log)
     });
 
     bot.onText(/\/no/, (msg) => {
