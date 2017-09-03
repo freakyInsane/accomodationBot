@@ -36,8 +36,10 @@ module.exports = (bot) => {
     });
 
     bot.onText(/\/lun/, (msg) => {
-        msgLun = msg
-        setInterval((msgLun)=>{
+        if(msgLun == '') {
+            msgLun = msg;
+        }
+        setInterval(()=>{
             osmosis
                 .get('www.lun.ua/uk/%D0%BE%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80-%D0%BA%D0%B8%D1%97%D0%B2')
                 .set({
@@ -58,7 +60,7 @@ module.exports = (bot) => {
                 .error(console.log)
                 .debug(console.log)
         },5000);
-        osmosis
+/*        osmosis
             .get('www.lun.ua/uk/%D0%BE%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80-%D0%BA%D0%B8%D1%97%D0%B2')
             .set({
                 id: ['.realty-card @data-jss'],
@@ -78,7 +80,7 @@ module.exports = (bot) => {
             })
             .log(console.log)
             .error(console.log)
-            .debug(console.log)
+            .debug(console.log)*/
     });
 
     bot.onText(/\/no/, (msg) => {
